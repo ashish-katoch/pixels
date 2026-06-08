@@ -54,11 +54,11 @@ export function Contact() {
               <div>
                 <p className="overline mb-2">Telephone</p>
                 <a
-                  href="tel:+910000000000"
+                  href="tel:+918699314112"
                   className="link-editorial font-serif text-xl md:text-2xl"
                   data-testid="contact-phone"
                 >
-                  +91 · available on request
+                  +91 86993 14112
                 </a>
               </div>
               <div>
