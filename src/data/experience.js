@@ -10,14 +10,14 @@ export const experience = [
   {
     year: "Mar 2023 — Nov 2025",
     role: "Frontend Developer",
-    company: "Mysense Technologies Pvt. Ltd.",
+    company: "Tru Agency",
     location: "Mohali, IN",
     summary:
       "Developed scalable frontend interfaces using React.js and modern JavaScript. Collaborated with designers and backend teams to ship responsive, high-performance web applications while improving UI consistency across the product.",
   },
   {
     year: "Feb 2021 — Dec 2022",
-    role: "UI Developer",
+    role: "Web Designer / Frontend Developer",
     company: "Netpyx Solution",
     location: "Mohali, IN",
     summary:
