@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Hero } from "../sections/Hero";
 import { FeaturedProjects } from "../sections/FeaturedProjects";
-import { MoreWork } from "../sections/MoreWork";
 import { Expertise } from "../sections/Expertise";
 import { Experience } from "../sections/Experience";
 import { About } from "../sections/About";
@@ -32,7 +31,6 @@ export default function Home() {
     <main data-testid="page-home">
       <Hero />
       <FeaturedProjects />
-      <MoreWork />
       <Expertise />
       <Experience />
       <About />

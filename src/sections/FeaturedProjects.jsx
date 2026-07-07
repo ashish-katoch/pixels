@@ -30,6 +30,19 @@ export function FeaturedProjects() {
             <ProjectRow key={p.slug} project={p} index={i} />
           ))}
         </ul>
+
+        <Reveal delay={0.1}>
+          <div className="mt-10 flex justify-end">
+            <Link
+              to="/more-work"
+              className="group inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors"
+              data-testid="more-work-link"
+            >
+              See more work
+              <ArrowUpRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" strokeWidth={1.5} />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

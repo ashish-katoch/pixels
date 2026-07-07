@@ -8,6 +8,7 @@ import { Cursor } from "@/components/Cursor";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import Home from "@/pages/Home";
 import CaseStudy from "@/pages/CaseStudy";
+import MoreWork from "@/pages/MoreWork";
 import Writing from "@/pages/Writing";
 import BlogPost from "@/pages/BlogPost";
 import NotFound from "@/pages/NotFound";
@@ -26,6 +27,7 @@ function AnimatedRoutes() {
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/work/:slug" element={<CaseStudy />} />
+          <Route path="/more-work" element={<MoreWork />} />
           <Route path="/writing" element={<Writing />} />
           <Route path="/writing/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
