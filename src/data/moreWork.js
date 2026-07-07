@@ -37,6 +37,6 @@ export const moreWork = [
   { name: "TradeHook", url: "https://tradehook.com.au/", tech: "Laravel" },
   { name: "Eddy's", url: "https://www.eddys.tw/", tech: "Laravel" },
 
-  { name: "Marengo", url: null, tech: "Design system & UI (confidential client)" },
-  { name: "QR Buddy", url: null, tech: "Mobile app — Flutter (confidential client)" },
+  { name: "Confidential Client — Design System", url: null, tech: "UI / Design System" },
+  { name: "Confidential Client — Mobile App", url: null, tech: "Flutter" },
 ];
