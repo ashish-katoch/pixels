@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { getProject, projects } from "../data/projects";
 import { Reveal } from "../components/Reveal";
+import { useSeo } from "../hooks/useSeo";
 
 export default function CaseStudy() {
   const { slug } = useParams();
@@ -12,6 +13,12 @@ export default function CaseStudy() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [slug]);
+
+  useSeo({
+    title: project ? `${project.title} — Case Study` : undefined,
+    description: project?.tagline,
+    path: `/work/${slug}`,
+  });
 
   if (!project) return <Navigate to="/" replace />;
 

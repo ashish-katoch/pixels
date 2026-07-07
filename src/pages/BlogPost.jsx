@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { getPost, posts } from "../data/posts";
 import { Reveal } from "../components/Reveal";
+import { useSeo } from "../hooks/useSeo";
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -11,6 +12,12 @@ export default function BlogPost() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [slug]);
+
+  useSeo({
+    title: post?.title,
+    description: post?.excerpt,
+    path: `/writing/${slug}`,
+  });
 
   if (!post) return <Navigate to="/writing" replace />;
 

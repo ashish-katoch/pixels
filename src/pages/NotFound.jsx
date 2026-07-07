@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useSeo } from "../hooks/useSeo";
 
 export default function NotFound() {
+  useSeo({ title: "Page Not Found", noindex: true });
+
   return (
     <main className="min-h-[80vh] flex items-center" data-testid="page-not-found">
       <div className="container-editorial">

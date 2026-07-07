@@ -2,8 +2,16 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { posts } from "../data/posts";
 import { Reveal } from "../components/Reveal";
+import { useSeo } from "../hooks/useSeo";
 
 export default function Writing() {
+  useSeo({
+    title: "Writing",
+    description:
+      "Occasional essays on frontend craft, design systems, and the increasingly editorial weight of building for the web.",
+    path: "/writing",
+  });
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, []);

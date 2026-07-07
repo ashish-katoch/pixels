@@ -7,9 +7,11 @@ import { Experience } from "../sections/Experience";
 import { About } from "../sections/About";
 import { WritingTeaser } from "../sections/WritingTeaser";
 import { Contact } from "../sections/Contact";
+import { useSeo } from "../hooks/useSeo";
 
 export default function Home() {
   const location = useLocation();
+  useSeo({ path: "/" });
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
