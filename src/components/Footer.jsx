@@ -37,11 +37,11 @@ export function Footer() {
               quietly remarkable.
             </h2>
             <a
-              href="mailto:ashishkatoch7113@hotmail.com"
+              href="mailto:me@ashishpixels.com"
               className="link-editorial mt-6 inline-block font-serif italic text-xl md:text-2xl text-foreground/90"
               data-testid="footer-email-link"
             >
-              ashishkatoch7113@hotmail.com
+              me@ashishpixels.com
             </a>
           </div>
 

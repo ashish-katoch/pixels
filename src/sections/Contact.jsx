@@ -2,22 +2,28 @@ import { useState } from "react";
 import { Reveal } from "../components/Reveal";
 import { ArrowUpRight } from "lucide-react";
 
-const EMAIL = "ashishkatoch7113@hotmail.com";
+const EMAIL = "me@ashishpixels.com";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvzjnakk";
 
 export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState("idle");
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const subject = encodeURIComponent(
-      `Hello Ashish — from ${form.name || "the portfolio"}`
-    );
-    const body = encodeURIComponent(
-      `${form.message}\n\n— ${form.name}\n${form.email}`
-    );
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-    setSent(true);
+    setStatus("sending");
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(e.target),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -76,6 +82,7 @@ export function Contact() {
             >
               <Field
                 id="contact-name"
+                name="name"
                 label="01 / Name"
                 value={form.name}
                 onChange={(v) => setForm((f) => ({ ...f, name: v }))}
@@ -83,6 +90,7 @@ export function Contact() {
               />
               <Field
                 id="contact-email"
+                name="email"
                 label="02 / Email"
                 type="email"
                 value={form.email}
@@ -91,6 +99,7 @@ export function Contact() {
               />
               <Field
                 id="contact-message"
+                name="message"
                 label="03 / Message"
                 textarea
                 value={form.message}
@@ -101,20 +110,31 @@ export function Contact() {
               <div className="flex items-center justify-between pt-2">
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-foreground hover:opacity-80 transition-opacity"
+                  disabled={status === "sending"}
+                  className="group inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-foreground hover:opacity-80 transition-opacity disabled:opacity-50"
                   data-testid="contact-submit"
                 >
-                  <span className="link-editorial">Send via mail client</span>
+                  <span className="link-editorial">
+                    {status === "sending" ? "Sending…" : "Send message"}
+                  </span>
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/60 group-hover:bg-foreground group-hover:text-background transition-colors">
                     <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
                   </span>
                 </button>
-                {sent && (
+                {status === "sent" && (
                   <p
                     className="font-mono text-[11px] uppercase tracking-[0.22em] text-emerald-600 dark:text-emerald-400"
                     data-testid="contact-sent"
                   >
-                    ✓ Mail client opened
+                    ✓ Message sent
+                  </p>
+                )}
+                {status === "error" && (
+                  <p
+                    className="font-mono text-[11px] uppercase tracking-[0.22em] text-red-600 dark:text-red-400"
+                    data-testid="contact-error"
+                  >
+                    ✕ Failed — email me directly
                   </p>
                 )}
               </div>
@@ -126,13 +146,14 @@ export function Contact() {
   );
 }
 
-function Field({ id, label, value, onChange, type = "text", textarea, required }) {
+function Field({ id, name, label, value, onChange, type = "text", textarea, required }) {
   return (
     <label htmlFor={id} className="block">
       <span className="overline block mb-3">{label}</span>
       {textarea ? (
         <textarea
           id={id}
+          name={name}
           required={required}
           value={value}
           onChange={(e) => onChange(e.target.value)}
@@ -144,6 +165,7 @@ function Field({ id, label, value, onChange, type = "text", textarea, required }
       ) : (
         <input
           id={id}
+          name={name}
           type={type}
           required={required}
           value={value}
