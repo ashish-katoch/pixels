@@ -19,8 +19,8 @@ export const projects = [
       "Enhanced platform features and customised UI themes for one of the largest grocery chains in the United States.",
     metrics: [
       { value: "4mo", label: "Engagement" },
-      { value: "+22%", label: "Page performance" },
-      { value: "100%", label: "Brand-theme parity" },
+      { value: "4", label: "Technologies used" },
+      { value: "Live", label: "Site status" },
     ],
     challenge:
       "Safeway needed deeper customisation of its existing storefront — themed pages, promotional flows, and improved data integration without disrupting a live high-traffic experience.",
@@ -51,8 +51,8 @@ export const projects = [
       "A premium skincare storefront tuned for clarity, conversion, and the kind of detail luxury customers notice.",
     metrics: [
       { value: "5mo", label: "Engagement" },
-      { value: "+18%", label: "PDP conversion" },
       { value: "AA", label: "WCAG conformance" },
+      { value: "Live", label: "Site status" },
     ],
     challenge:
       "Premium skincare shoppers expect imagery, copy, and motion to feel considered. The team needed faster PDPs and a smoother review-led purchase journey across global markets.",
@@ -84,7 +84,7 @@ export const projects = [
     metrics: [
       { value: "5mo", label: "Engagement" },
       { value: "1000+", label: "SKUs surfaced" },
-      { value: "+30%", label: "Search efficiency" },
+      { value: "Live", label: "Site status" },
     ],
     challenge:
       "Customers needed to navigate thousands of products, find a nearby store, and complete an online order — across desktop and mobile, without friction.",
@@ -116,7 +116,7 @@ export const projects = [
     metrics: [
       { value: "4mo", label: "Engagement" },
       { value: "AA", label: "WCAG conformance" },
-      { value: "+40%", label: "Search visibility" },
+      { value: "Live", label: "Site status" },
     ],
     challenge:
       "CSA Group publishes dense, technical content for industries that depend on accuracy. The site needed to feel authoritative while staying easy for engineers, auditors, and consumers to navigate.",
@@ -147,8 +147,8 @@ export const projects = [
       "A calm, editorial site that supports a wellness brand built on trust, expertise, and beautifully written long-form content.",
     metrics: [
       { value: "3mo", label: "Engagement" },
-      { value: "+45%", label: "Avg. session time" },
-      { value: "100%", label: "Mobile readiness" },
+      { value: "4", label: "Technologies used" },
+      { value: "Live", label: "Site status" },
     ],
     challenge:
       "Maria Marlowe's audience reads — really reads. The site needed to feel personal, calm, and editorial, with a blog at the centre rather than the periphery.",
@@ -179,8 +179,8 @@ export const projects = [
       "Property listings, amenity tours, and inquiry flows — packaged in a confident, residential identity.",
     metrics: [
       { value: "3mo", label: "Engagement" },
-      { value: "+60%", label: "Inquiry submissions" },
-      { value: "100%", label: "Mobile readiness" },
+      { value: "4", label: "Technologies used" },
+      { value: "Live", label: "Site status" },
     ],
     challenge:
       "Premium real-estate buyers expect tactile galleries, thorough amenity coverage, and a fast path to talking to a sales rep.",
