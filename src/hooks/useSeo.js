@@ -15,12 +15,15 @@ function setMeta(attr, key, content) {
   el.setAttribute("content", content);
 }
 
+const STRUCTURED_DATA_ID = "route-structured-data";
+
 /**
  * Updates document title, meta description, OG/Twitter tags, canonical URL,
- * and robots directive for the current route. Resets to site defaults on
- * unmount so navigating back to another page doesn't leak stale metadata.
+ * robots directive, and (optionally) a JSON-LD structured data block for the
+ * current route. Resets to site defaults on unmount so navigating back to
+ * another page doesn't leak stale metadata.
  */
-export function useSeo({ title, description, path = "/", noindex = false } = {}) {
+export function useSeo({ title, description, path = "/", noindex = false, structuredData } = {}) {
   useEffect(() => {
     const fullTitle = title ? `${title} | Ashish Katoch` : DEFAULT_TITLE;
     const desc = description || DEFAULT_DESCRIPTION;
@@ -38,6 +41,15 @@ export function useSeo({ title, description, path = "/", noindex = false } = {})
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute("href", url);
 
+    let script;
+    if (structuredData) {
+      script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.id = STRUCTURED_DATA_ID;
+      script.textContent = JSON.stringify(structuredData);
+      document.head.appendChild(script);
+    }
+
     return () => {
       document.title = DEFAULT_TITLE;
       setMeta("name", "description", DEFAULT_DESCRIPTION);
@@ -48,6 +60,7 @@ export function useSeo({ title, description, path = "/", noindex = false } = {})
       setMeta("name", "twitter:title", DEFAULT_TITLE);
       setMeta("name", "twitter:description", DEFAULT_DESCRIPTION);
       if (canonical) canonical.setAttribute("href", `${SITE_URL}/`);
+      script?.remove();
     };
-  }, [title, description, path, noindex]);
+  }, [title, description, path, noindex, structuredData]);
 }

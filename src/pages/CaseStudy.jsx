@@ -18,6 +18,24 @@ export default function CaseStudy() {
     title: project ? `${project.title} — Case Study` : undefined,
     description: project?.tagline,
     path: `/work/${slug}`,
+    structuredData: project
+      ? {
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: project.title,
+          description: project.tagline,
+          url: `https://ashishpixels.com/work/${slug}`,
+          creator: {
+            "@type": "Person",
+            name: "Ashish Katoch",
+            url: "https://ashishpixels.com",
+          },
+          about: project.client,
+          datePublished: project.year,
+          keywords: project.stack.join(", "),
+          ...(project.liveUrl ? { mainEntityOfPage: project.liveUrl } : {}),
+        }
+      : undefined,
   });
 
   if (!project) return <Navigate to="/" replace />;
