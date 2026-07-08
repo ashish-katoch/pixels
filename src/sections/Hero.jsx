@@ -17,10 +17,21 @@ export function Hero() {
     <section
       ref={ref}
       id="hero"
-      className="relative min-h-[100svh] flex flex-col justify-between pt-28 md:pt-32 pb-10"
+      className="relative min-h-[100svh] flex flex-col justify-between pt-28 md:pt-32 pb-10 overflow-hidden"
       data-testid="hero-section"
     >
-      <motion.div className="container-editorial flex-1 flex items-center" style={{ y, opacity }}>
+      {/* Background photo + dark overlay */}
+      <div className="absolute inset-0 z-0" aria-hidden data-testid="hero-bg">
+        <img
+          src="/images/hero-bg.jpg"
+          alt=""
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />
+      </div>
+
+      <motion.div className="relative z-10 container-editorial flex-1 flex items-center" style={{ y, opacity }}>
         <div className="w-full">
           {/* Meta row */}
           <div className="grid grid-cols-12 mb-10 md:mb-14 items-end">
@@ -106,7 +117,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.8 }}
-        className="container-editorial mt-10"
+        className="relative z-10 container-editorial mt-10"
       >
         <div className="flex items-end justify-between gap-6 border-t border-border/60 pt-6">
           <a
