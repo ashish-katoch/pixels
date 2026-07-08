@@ -27,8 +27,10 @@ export function Hero() {
           alt=""
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-background/85" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/30" />
+        {/* Light theme: fade starts immediately, fully clear by 50% */}
+        <div className="absolute inset-0 block dark:hidden bg-gradient-to-r from-background/90 to-transparent to-50%" />
+        {/* Dark theme: solid through 30%, then fades to a low residual tint (never fully clear) */}
+        <div className="absolute inset-0 hidden dark:block bg-gradient-to-r from-background/[92%] via-background/[92%] via-30% to-background/[18%]" />
       </div>
 
       <motion.div className="relative z-10 container-editorial flex-1 flex items-center" style={{ y, opacity }}>
