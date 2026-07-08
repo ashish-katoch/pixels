@@ -62,7 +62,7 @@ export function Nav() {
               <a
                 key={item.to}
                 href={item.to.startsWith("/#") ? item.to.replace("/", "") : item.to}
-                className="link-editorial text-foreground/70 hover:text-foreground transition-colors"
+                className="link-editorial text-foreground/80 hover:text-foreground transition-colors"
                 data-testid={`nav-link-${item.label.toLowerCase()}`}
                 onClick={(e) => {
                   if (item.to.startsWith("/#")) {
@@ -78,7 +78,7 @@ export function Nav() {
               to="/writing"
               className={({ isActive }) =>
                 `link-editorial transition-colors ${
-                  isActive ? "text-foreground" : "text-foreground/70 hover:text-foreground"
+                  isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"
                 }`
               }
               data-testid="nav-link-writing"
@@ -92,7 +92,7 @@ export function Nav() {
               href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-foreground/80 hover:text-foreground transition-colors"
+              className="hidden md:inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-foreground/90 hover:text-foreground transition-colors"
               data-testid="nav-resume-download"
             >
               <span className="link-editorial">Résumé</span>
