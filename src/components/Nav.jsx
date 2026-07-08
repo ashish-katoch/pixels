@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { RESUME_URL } from "../data/resume";
 
 const NAV = [
   { to: "/", label: "Index", end: true },
@@ -88,7 +89,7 @@ export function Nav() {
 
           <div className="flex items-center gap-3">
             <a
-              href="/resume.pdf"
+              href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-foreground/80 hover:text-foreground transition-colors"
@@ -155,7 +156,7 @@ export function Nav() {
                 </motion.a>
               ))}
               <motion.a
-                href="/resume.pdf"
+                href={RESUME_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 16 }}

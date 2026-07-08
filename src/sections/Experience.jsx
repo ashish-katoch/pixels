@@ -1,5 +1,6 @@
 import { experience } from "../data/experience";
 import { Reveal } from "../components/Reveal";
+import { RESUME_URL } from "../data/resume";
 
 export function Experience() {
   return (
@@ -21,7 +22,7 @@ export function Experience() {
             </div>
             <div className="col-span-12 md:col-span-5 md:col-start-8 self-end">
               <a
-                href="/resume.pdf"
+                href={RESUME_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-editorial font-mono text-[11px] uppercase tracking-[0.22em] text-foreground/80"
