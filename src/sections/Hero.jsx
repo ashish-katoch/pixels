@@ -41,7 +41,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="col-span-12 md:col-span-3 overline text-foreground/80"
+              className="col-span-12 md:col-span-3 overline !text-foreground/80 dark:!text-white/90"
             >
               <span className="inline-flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -52,7 +52,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="hidden md:block col-span-6 overline text-center text-foreground/80"
+              className="hidden md:block col-span-6 overline text-center !text-foreground/80 dark:!text-white/90"
             >
               Portfolio — Vol. 07
             </motion.div>
@@ -60,7 +60,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="col-span-12 md:col-span-3 overline md:text-right mt-2 md:mt-0 text-foreground/80"
+              className="col-span-12 md:col-span-3 overline md:text-right mt-2 md:mt-0 !text-foreground/80 dark:!text-white/90"
             >
               Mohali · 30.7°N 76.7°E
             </motion.div>
@@ -87,7 +87,7 @@ export function Hero() {
               transition={{ delay: 0.9, duration: 0.8 }}
               className="col-span-12 md:col-span-5 md:col-start-1"
             >
-              <p className="overline mb-3 text-foreground/80">— The work</p>
+              <p className="overline mb-3 !text-foreground/80 dark:!text-white/90">— The work</p>
               <p className="text-pretty text-lg md:text-xl text-foreground/85 leading-snug font-light max-w-md">
                 Frontend developer with{" "}
                 <span className="italic font-serif">8+ years</span> building
@@ -102,7 +102,7 @@ export function Hero() {
               transition={{ delay: 1.05, duration: 0.8 }}
               className="col-span-12 md:col-span-5 md:col-start-8"
             >
-              <p className="overline mb-3 text-foreground/80">— Currently</p>
+              <p className="overline mb-3 !text-foreground/80 dark:!text-white/90">— Currently</p>
               <p className="text-pretty text-lg md:text-xl text-foreground/85 leading-snug font-light max-w-md">
                 Working as an{" "}
                 <span className="italic font-serif">independent freelancer</span>{" "}
@@ -121,7 +121,7 @@ export function Hero() {
         transition={{ delay: 1.4, duration: 0.8 }}
         className="relative z-10 container-editorial mt-10"
       >
-        <div className="flex items-end justify-between gap-6 border-t border-border/60 pt-6">
+        <div className="flex items-end justify-between gap-6 border-t border-black/20 dark:border-white/20 pt-6">
           <a
             href="#work"
             onClick={(e) => {

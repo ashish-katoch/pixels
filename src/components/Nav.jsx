@@ -101,7 +101,7 @@ export function Nav() {
             <ThemeToggle />
             <button
               type="button"
-              className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/60"
+              className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/40 dark:border-white/40 text-foreground/80 dark:text-white"
               onClick={() => setOpen(true)}
               aria-label="Open menu"
               data-testid="mobile-menu-open"
