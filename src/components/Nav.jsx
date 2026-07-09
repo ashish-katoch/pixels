@@ -6,7 +6,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { RESUME_URL } from "../data/resume";
 
 const NAV = [
-  { to: "/", label: "Index", end: true },
+  { to: "/", label: "Home", end: true },
   { to: "/#work", label: "Work" },
   { to: "/#expertise", label: "Expertise" },
   { to: "/#about", label: "About" },
