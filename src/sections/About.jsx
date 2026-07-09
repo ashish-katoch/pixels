@@ -91,14 +91,14 @@ export function About() {
             {education.map((e, i) => (
               <Reveal key={e.degree} delay={0.05 * i}>
                 <div className="grid grid-cols-12 gap-4 py-5 border-b border-border/60 items-baseline">
-                  <p className="col-span-12 md:col-span-3 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  <p className="col-span-12 md:col-span-3 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
                     {e.year}
                   </p>
                   <div className="col-span-12 md:col-span-6">
                     <p className="font-serif text-xl md:text-2xl">{e.degree}</p>
                     <p className="text-sm text-foreground/70 mt-1">{e.school}</p>
                   </div>
-                  <p className="col-span-12 md:col-span-3 md:text-right font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  <p className="col-span-12 md:col-span-3 md:text-right font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
                     {e.score}
                   </p>
                 </div>
@@ -119,7 +119,7 @@ export function About() {
               className="bg-background p-8 md:p-10 group hover:bg-secondary/40 transition-colors"
               data-testid={`principle-${p.n}`}
             >
-              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground mb-6">
+              <p className="font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground mb-6">
                 / {p.n}
               </p>
               <h3 className="font-serif text-2xl md:text-3xl tracking-tight mb-3">

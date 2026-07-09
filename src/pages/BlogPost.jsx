@@ -29,7 +29,7 @@ export default function BlogPost() {
       <article className="container-editorial">
         <Link
           to="/writing"
-          className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground mb-10"
+          className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground mb-10"
           data-testid="post-back-link"
         >
           <ArrowLeft className="h-3.5 w-3.5" strokeWidth={1.5} />
@@ -70,7 +70,7 @@ export default function BlogPost() {
             <h2 className="font-serif text-3xl md:text-5xl tracking-tight leading-[1.02] transition-all duration-700 group-hover:italic">
               {next.title}
             </h2>
-            <span className="inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-foreground/70 group-hover:text-foreground">
+            <span className="inline-flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.22em] text-foreground/70 group-hover:text-foreground">
               Read
               <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
             </span>

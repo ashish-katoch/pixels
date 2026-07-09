@@ -111,7 +111,7 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="group inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-foreground hover:opacity-80 transition-opacity disabled:opacity-50"
+                  className="group inline-flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.22em] text-foreground hover:opacity-80 transition-opacity disabled:opacity-50"
                   data-testid="contact-submit"
                 >
                   <span className="link-editorial">
@@ -123,7 +123,7 @@ export function Contact() {
                 </button>
                 {status === "sent" && (
                   <p
-                    className="font-mono text-[11px] uppercase tracking-[0.22em] text-emerald-600 dark:text-emerald-400"
+                    className="font-mono text-[12px] uppercase tracking-[0.22em] text-emerald-600 dark:text-emerald-400"
                     data-testid="contact-sent"
                   >
                     ✓ Message sent
@@ -131,7 +131,7 @@ export function Contact() {
                 )}
                 {status === "error" && (
                   <p
-                    className="font-mono text-[11px] uppercase tracking-[0.22em] text-red-600 dark:text-red-400"
+                    className="font-mono text-[12px] uppercase tracking-[0.22em] text-red-600 dark:text-red-400"
                     data-testid="contact-error"
                   >
                     ✕ Failed — email me directly

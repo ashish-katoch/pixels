@@ -19,7 +19,7 @@ export default function NotFound() {
         </p>
         <Link
           to="/"
-          className="mt-8 inline-block link-editorial font-mono text-[11px] uppercase tracking-[0.22em]"
+          className="mt-8 inline-block link-editorial font-mono text-[12px] uppercase tracking-[0.22em]"
           data-testid="404-home-link"
         >
           ↗ Return to index

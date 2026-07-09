@@ -130,7 +130,7 @@ export function Hero() {
                 .getElementById("work")
                 ?.scrollIntoView({ behavior: "smooth", block: "start" });
             }}
-            className="inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-foreground/80 hover:text-foreground"
+            className="inline-flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.22em] text-foreground/80 hover:text-foreground"
             data-testid="hero-scroll-cue"
           >
             <span className="link-editorial">Scroll — selected work</span>
@@ -141,7 +141,7 @@ export function Hero() {
               <ArrowDown className="h-3.5 w-3.5" strokeWidth={1.5} />
             </motion.span>
           </a>
-          <p className="hidden sm:block font-mono text-[11px] uppercase tracking-[0.22em] text-foreground/70">
+          <p className="hidden sm:block font-mono text-[12px] uppercase tracking-[0.22em] text-foreground/70">
             Index / 01 — Hero
           </p>
         </div>

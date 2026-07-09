@@ -35,7 +35,7 @@ export function FeaturedProjects() {
           <div className="mt-10 flex justify-end">
             <Link
               to="/more-work"
-              className="group inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors"
+              className="group inline-flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground transition-colors"
               data-testid="more-work-link"
             >
               See more work
@@ -58,7 +58,7 @@ function ProjectRow({ project, index }) {
         data-cursor="hover"
       >
         {/* Index */}
-        <span className="col-span-2 md:col-span-1 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+        <span className="col-span-2 md:col-span-1 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
           {project.index}
         </span>
 
@@ -78,7 +78,7 @@ function ProjectRow({ project, index }) {
 
         {/* Year + arrow */}
         <div className="col-span-12 md:col-span-2 flex items-center justify-between md:justify-end gap-4 md:gap-6">
-          <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+          <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
             {project.year}
           </span>
           <motion.span

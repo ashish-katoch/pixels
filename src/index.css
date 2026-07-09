@@ -102,7 +102,7 @@
 
   /* Overline (Awwwards-style label) */
   .overline {
-    @apply text-[11px] uppercase tracking-[0.22em] font-medium text-muted-foreground;
+    @apply text-[12px] uppercase tracking-[0.22em] font-medium text-muted-foreground;
   }
 
   /* Grain overlay for cinematic feel */

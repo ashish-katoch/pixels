@@ -73,7 +73,7 @@ export function Footer() {
             <button
               type="button"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-foreground/70 hover:text-foreground transition-colors"
+              className="mt-6 inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.22em] text-foreground/70 hover:text-foreground transition-colors"
               data-testid="footer-back-to-top"
             >
               <ArrowUp className="h-3.5 w-3.5" strokeWidth={1.5} />
@@ -82,7 +82,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-border/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+        <div className="mt-16 pt-8 border-t border-border/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
           <p>© {new Date().getFullYear()} Ashish Katoch. All rights reserved.</p>
           <p>Designed &amp; built in Mohali — set in Playfair Display &amp; Outfit.</p>
         </div>

@@ -55,7 +55,7 @@ export function Nav() {
             Ashish<span className="text-muted-foreground">.</span>Katoch
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8 font-mono text-[11px] uppercase tracking-[0.22em]">
+          <nav className="hidden md:flex items-center gap-8 font-mono text-[12px] uppercase tracking-[0.22em]">
             {NAV.slice(1)
               .filter((i) => i.label !== "Writing")
               .map((item) => (
@@ -92,7 +92,7 @@ export function Nav() {
               href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-foreground/90 hover:text-foreground transition-colors"
+              className="hidden md:inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.22em] text-foreground/90 hover:text-foreground transition-colors"
               data-testid="nav-resume-download"
             >
               <span className="link-editorial">Résumé</span>

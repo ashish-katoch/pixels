@@ -24,7 +24,7 @@ export function WritingTeaser() {
             <div className="col-span-12 md:col-span-4 md:col-start-9">
               <Link
                 to="/writing"
-                className="link-editorial font-mono text-[11px] uppercase tracking-[0.22em] inline-flex items-center gap-2"
+                className="link-editorial font-mono text-[12px] uppercase tracking-[0.22em] inline-flex items-center gap-2"
                 data-testid="writing-index-link"
               >
                 Index of essays
@@ -42,7 +42,7 @@ export function WritingTeaser() {
                   to={`/writing/${post.slug}`}
                   className="group grid grid-cols-12 gap-4 py-7 md:py-8 items-baseline"
                 >
-                  <span className="col-span-3 md:col-span-2 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  <span className="col-span-3 md:col-span-2 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
                     {new Date(post.date).toLocaleDateString("en-GB", {
                       year: "numeric",
                       month: "short",
@@ -51,10 +51,10 @@ export function WritingTeaser() {
                   <h3 className="col-span-7 md:col-span-7 font-serif text-xl md:text-3xl tracking-tight leading-tight transition-all duration-500 group-hover:italic">
                     {post.title}
                   </h3>
-                  <span className="hidden md:block col-span-2 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  <span className="hidden md:block col-span-2 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
                     {post.tag}
                   </span>
-                  <span className="col-span-2 md:col-span-1 text-right font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  <span className="col-span-2 md:col-span-1 text-right font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
                     {post.readTime}
                   </span>
                 </Link>

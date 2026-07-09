@@ -43,7 +43,7 @@ export default function Writing() {
                   to={`/writing/${post.slug}`}
                   className="group grid grid-cols-12 gap-4 py-8 md:py-10 items-start"
                 >
-                  <span className="col-span-3 md:col-span-2 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground pt-2">
+                  <span className="col-span-3 md:col-span-2 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground pt-2">
                     {new Date(post.date).toLocaleDateString("en-GB", {
                       year: "numeric",
                       month: "short",
@@ -59,10 +59,10 @@ export default function Writing() {
                     </p>
                   </div>
                   <div className="hidden md:flex col-span-3 flex-col items-end gap-2 pt-2">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                    <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
                       {post.tag}
                     </span>
-                    <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                    <span className="font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
                       {post.readTime}
                     </span>
                   </div>
