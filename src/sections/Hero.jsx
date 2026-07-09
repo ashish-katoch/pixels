@@ -25,7 +25,7 @@ export function Hero() {
         <img
           src="/images/hero-bg.jpg"
           alt=""
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover max-[1199px]:object-[75%]"
         />
         {/* Light theme: fade starts immediately, fully clear by 50% */}
         <div className="absolute inset-0 block dark:hidden bg-gradient-to-r from-background/90 to-transparent to-50%" />
