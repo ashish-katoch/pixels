@@ -55,26 +55,50 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ashishpixels.com/writing/the-quiet-frontend</loc>
-    <lastmod>2026-07-08</lastmod>
+    <loc>https://ashishpixels.com/writing/rebuilding-my-own-portfolio-finally</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ashishpixels.com/writing/react-server-components-in-practice</loc>
-    <lastmod>2026-07-08</lastmod>
+    <loc>https://ashishpixels.com/writing/stepping-outside-react-mobile-project</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ashishpixels.com/writing/designing-the-empty-state</loc>
-    <lastmod>2026-07-08</lastmod>
+    <loc>https://ashishpixels.com/writing/design-system-under-nda</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ashishpixels.com/writing/the-portfolio-is-the-product</loc>
-    <lastmod>2026-07-08</lastmod>
+    <loc>https://ashishpixels.com/writing/going-independent-after-eight-years</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashishpixels.com/writing/what-wcag-aa-actually-costs</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashishpixels.com/writing/five-stacks-one-instinct</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashishpixels.com/writing/premium-ecommerce-and-editorial-have-in-common</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ashishpixels.com/writing/web-designer-to-frontend-developer</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
