@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
-import { useSeo } from "../hooks/useSeo";
+import Link from "next/link";
+
+export const metadata = {
+  title: "Page Not Found",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
-  useSeo({ title: "Page Not Found", noindex: true });
-
   return (
     <main className="min-h-[80vh] flex items-center" data-testid="page-not-found">
       <div className="container-editorial">
@@ -18,7 +20,7 @@ export default function NotFound() {
           way, let&apos;s go back to the index.
         </p>
         <Link
-          to="/"
+          href="/"
           className="mt-8 inline-block link-editorial font-mono text-[12px] uppercase tracking-[0.22em]"
           data-testid="404-home-link"
         >

@@ -1,9 +1,14 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { moreWork } from "../data/moreWork";
-import { Reveal } from "../components/Reveal";
-import { useSeo } from "../hooks/useSeo";
+import { moreWork } from "@/data/moreWork";
+import { Reveal } from "@/components/Reveal";
+
+export const metadata = {
+  title: "More Work",
+  description:
+    "Additional client projects across React/Next.js, WordPress, Shopify, Magento, and more — listed without the full case-study treatment.",
+  alternates: { canonical: "/more-work" },
+};
 
 const CATEGORY_ORDER = [
   "React / Next.js",
@@ -29,24 +34,13 @@ function groupByCategory(items) {
 }
 
 export default function MoreWork() {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, []);
-
-  useSeo({
-    title: "More Work",
-    description:
-      "Additional client projects across React/Next.js, WordPress, Shopify, Magento, and more — listed without the full case-study treatment.",
-    path: "/more-work",
-  });
-
   const groups = groupByCategory(moreWork);
 
   return (
     <main className="pt-28 md:pt-36" data-testid="page-more-work">
       <section className="container-editorial">
         <Link
-          to="/"
+          href="/"
           className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground mb-10"
           data-testid="more-work-back-link"
         >
@@ -143,7 +137,7 @@ export default function MoreWork() {
             </p>
           </div>
           <Link
-            to="/#work"
+            href="/#work"
             className="inline-flex items-center gap-3 border border-white/10 text-foreground/80 font-mono text-sm tracking-widest uppercase px-7 py-4 hover:border-foreground/30 hover:text-foreground transition-all duration-300"
           >
             ← Selected work

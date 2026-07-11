@@ -1,54 +1,72 @@
-import { useEffect } from "react";
-import { Link, useParams, Navigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { getProject, projects } from "../data/projects";
-import { Reveal } from "../components/Reveal";
-import { useSeo } from "../hooks/useSeo";
+import { getProject, projects } from "@/data/projects";
+import { Reveal } from "@/components/Reveal";
+import { CaseStudyCover } from "@/components/CaseStudyCover";
+import { JsonLd } from "@/components/JsonLd";
 
-export default function CaseStudy() {
-  const { slug } = useParams();
+const SITE_URL = "https://ashishpixels.com";
+
+export async function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const project = getProject(slug);
+  if (!project) return {};
+
+  const title = `${project.title} — Case Study`;
+  return {
+    title,
+    description: project.tagline,
+    alternates: { canonical: `/work/${slug}` },
+    openGraph: { title, description: project.tagline, url: `${SITE_URL}/work/${slug}` },
+    twitter: { title, description: project.tagline },
+  };
+}
+
+export default async function CaseStudy({ params }) {
+  const { slug } = await params;
   const project = getProject(slug);
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [slug]);
+  if (!project) notFound();
 
-  useSeo({
-    title: project ? `${project.title} — Case Study` : undefined,
-    description: project?.tagline,
-    path: `/work/${slug}`,
-    structuredData: project
-      ? {
-          "@context": "https://schema.org",
-          "@type": "CreativeWork",
-          name: project.title,
-          description: project.tagline,
-          url: `https://ashishpixels.com/work/${slug}`,
-          creator: {
-            "@type": "Person",
-            name: "Ashish Katoch",
-            url: "https://ashishpixels.com",
-          },
-          about: project.client,
-          datePublished: project.year,
-          keywords: project.stack.join(", "),
-          ...(project.liveUrl ? { mainEntityOfPage: project.liveUrl } : {}),
-        }
-      : undefined,
-  });
+  const creativeWorkJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.tagline,
+    url: `${SITE_URL}/work/${slug}`,
+    creator: { "@type": "Person", name: "Ashish Katoch", url: SITE_URL },
+    about: project.client,
+    datePublished: project.year,
+    keywords: project.stack.join(", "),
+    ...(project.liveUrl ? { mainEntityOfPage: project.liveUrl } : {}),
+  };
 
-  if (!project) return <Navigate to="/" replace />;
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Work", item: `${SITE_URL}/#work` },
+      { "@type": "ListItem", position: 3, name: project.title, item: `${SITE_URL}/work/${slug}` },
+    ],
+  };
 
   const currentIdx = projects.findIndex((p) => p.slug === slug);
   const next = projects[(currentIdx + 1) % projects.length];
 
   return (
     <main className="pt-28 md:pt-36" data-testid={`case-study-${project.slug}`}>
+      <JsonLd data={creativeWorkJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       {/* Header */}
       <section className="container-editorial">
         <Link
-          to="/#work"
+          href="/#work"
           className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground hover:text-foreground mb-10"
           data-testid="case-back-link"
         >
@@ -93,18 +111,7 @@ export default function CaseStudy() {
       {/* Cover */}
       <Reveal>
         <div className="container-editorial">
-          <motion.div
-            initial={{ scale: 1.04, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            className="aspect-[16/9] overflow-hidden rounded-sm border border-border/60"
-          >
-            <img
-              src={project.cover}
-              alt={`${project.title} cover`}
-              className="h-full w-full object-cover"
-            />
-          </motion.div>
+          <CaseStudyCover src={project.cover} alt={`${project.title} cover`} />
         </div>
       </Reveal>
 
@@ -187,7 +194,7 @@ export default function CaseStudy() {
       {/* Next project */}
       <section className="mt-32 md:mt-40 border-t border-border/60" data-testid="case-next-project">
         <Link
-          to={`/work/${next.slug}`}
+          href={`/work/${next.slug}`}
           className="group block container-editorial py-16 md:py-24"
         >
           <p className="overline mb-4">— Next case</p>

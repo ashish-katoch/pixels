@@ -68,7 +68,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-outfit), -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "ss01", "cv02", "cv11";
@@ -82,11 +82,11 @@
 
 @layer utilities {
   .font-serif {
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: var(--font-playfair-display), Georgia, serif;
     font-feature-settings: "lnum";
   }
   .font-mono {
-    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
   }
   .text-balance {
     text-wrap: balance;
@@ -180,3 +180,8 @@
   }
 }
 
+/* Page-specific overrides only (ported from CRA's App.css) */
+.App {
+  min-height: 100vh;
+  position: relative;
+}

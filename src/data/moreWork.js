@@ -19,8 +19,6 @@ export const moreWork = [
   { name: "Davy Co", url: "https://www.davy.co.uk/", tech: "WooCommerce", category: "WordPress + WooCommerce" },
   { name: "Davy Wine Co", url: "https://www.davywine.co.uk/", tech: "WooCommerce", category: "WordPress + WooCommerce" },
 
-  { name: "Polin et moi", url: "https://www.polinetmoi.com/es/", tech: "PrestaShop", category: "PrestaShop" },
-
   { name: "Founders Beauty", url: "https://foundersbeauty.com/", tech: "Shopify", category: "Shopify" },
   { name: "5minskin", url: "https://5minskin.co/", tech: "Shopify", category: "Shopify" },
   { name: "Puur Smile", url: "https://puursmile.com/", tech: "Shopify", category: "Shopify" },

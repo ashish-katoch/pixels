@@ -1,21 +1,15 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { posts } from "../data/posts";
-import { Reveal } from "../components/Reveal";
-import { useSeo } from "../hooks/useSeo";
+import Link from "next/link";
+import { posts } from "@/data/posts";
+import { Reveal } from "@/components/Reveal";
+
+export const metadata = {
+  title: "Writing",
+  description:
+    "Occasional essays on frontend craft, design systems, and the increasingly editorial weight of building for the web.",
+  alternates: { canonical: "/writing" },
+};
 
 export default function Writing() {
-  useSeo({
-    title: "Writing",
-    description:
-      "Occasional essays on frontend craft, design systems, and the increasingly editorial weight of building for the web.",
-    path: "/writing",
-  });
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, []);
-
   return (
     <main className="pt-28 md:pt-36" data-testid="page-writing">
       <section className="container-editorial">
@@ -40,7 +34,7 @@ export default function Writing() {
                 data-testid={`post-item-${post.slug}`}
               >
                 <Link
-                  to={`/writing/${post.slug}`}
+                  href={`/writing/${post.slug}`}
                   className="group grid grid-cols-12 gap-4 py-8 md:py-10 items-start"
                 >
                   <span className="col-span-3 md:col-span-2 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground pt-2">

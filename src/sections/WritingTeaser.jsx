@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { posts } from "../data/posts";
 import { Reveal } from "../components/Reveal";
@@ -23,7 +23,7 @@ export function WritingTeaser() {
             </div>
             <div className="col-span-12 md:col-span-4 md:col-start-9">
               <Link
-                to="/writing"
+                href="/writing"
                 className="link-editorial font-mono text-[12px] uppercase tracking-[0.22em] inline-flex items-center gap-2"
                 data-testid="writing-index-link"
               >
@@ -39,7 +39,7 @@ export function WritingTeaser() {
             <Reveal key={post.slug} delay={i * 0.05}>
               <li className="border-b border-border/60" data-testid={`teaser-post-${post.slug}`}>
                 <Link
-                  to={`/writing/${post.slug}`}
+                  href={`/writing/${post.slug}`}
                   className="group grid grid-cols-12 gap-4 py-7 md:py-8 items-baseline"
                 >
                   <span className="col-span-3 md:col-span-2 font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
