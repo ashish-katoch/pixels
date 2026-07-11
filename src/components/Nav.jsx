@@ -12,7 +12,7 @@ const NAV = [
   { to: "/", label: "Home", end: true },
   { to: "/#work", label: "Work" },
   { to: "/#expertise", label: "Expertise" },
-  { to: "/#about", label: "About" },
+  { to: "/about", label: "About" },
   { to: "/writing", label: "Writing" },
   { to: "/#contact", label: "Contact" },
 ];
@@ -59,33 +59,33 @@ export function Nav() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8 font-mono text-[12px] uppercase tracking-[0.22em]">
-            {NAV.slice(1)
-              .filter((i) => i.label !== "Writing")
-              .map((item) => (
-              <a
-                key={item.to}
-                href={item.to.startsWith("/#") ? item.to.replace("/", "") : item.to}
-                className="link-editorial text-foreground/80 hover:text-foreground transition-colors"
-                data-testid={`nav-link-${item.label.toLowerCase()}`}
-                onClick={(e) => {
-                  if (item.to.startsWith("/#")) {
+            {NAV.slice(1).map((item) =>
+              item.to.startsWith("/#") ? (
+                <a
+                  key={item.to}
+                  href={item.to.replace("/", "")}
+                  className="link-editorial text-foreground/80 hover:text-foreground transition-colors"
+                  data-testid={`nav-link-${item.label.toLowerCase()}`}
+                  onClick={(e) => {
                     e.preventDefault();
                     goToSection(item.to.slice(2));
-                  }
-                }}
-              >
-                {item.label}
-              </a>
-            ))}
-            <Link
-              href="/writing"
-              className={`link-editorial transition-colors ${
-                pathname === "/writing" ? "text-foreground" : "text-foreground/80 hover:text-foreground"
-              }`}
-              data-testid="nav-link-writing"
-            >
-              Writing
-            </Link>
+                  }}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.to}
+                  href={item.to}
+                  className={`link-editorial transition-colors ${
+                    pathname === item.to ? "text-foreground" : "text-foreground/80 hover:text-foreground"
+                  }`}
+                  data-testid={`nav-link-${item.label.toLowerCase()}`}
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </nav>
 
           <div className="flex items-center gap-3">
