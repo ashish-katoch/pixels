@@ -1,9 +1,12 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { RESUME_URL } from "../data/resume";
+import { RESUME_URL } from "@/data/resume";
 
 const NAV = [
   { to: "/", label: "Home", end: true },
@@ -17,8 +20,8 @@ const NAV = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -28,11 +31,11 @@ export function Nav() {
   }, []);
 
   const goToSection = (id) => {
-    if (location.pathname === "/") {
+    if (pathname === "/") {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
-      navigate(`/?section=${id}`);
+      router.push(`/?section=${id}`);
     }
   };
 
@@ -48,7 +51,7 @@ export function Nav() {
       >
         <div className="container-editorial flex h-16 md:h-20 items-center justify-between">
           <Link
-            to="/"
+            href="/"
             className="font-serif text-lg md:text-xl tracking-tight"
             data-testid="nav-logo"
           >
@@ -74,17 +77,15 @@ export function Nav() {
                 {item.label}
               </a>
             ))}
-            <NavLink
-              to="/writing"
-              className={({ isActive }) =>
-                `link-editorial transition-colors ${
-                  isActive ? "text-foreground" : "text-foreground/80 hover:text-foreground"
-                }`
-              }
+            <Link
+              href="/writing"
+              className={`link-editorial transition-colors ${
+                pathname === "/writing" ? "text-foreground" : "text-foreground/80 hover:text-foreground"
+              }`}
               data-testid="nav-link-writing"
             >
               Writing
-            </NavLink>
+            </Link>
           </nav>
 
           <div className="flex items-center gap-3">
@@ -123,7 +124,7 @@ export function Nav() {
             data-testid="mobile-menu-overlay"
           >
             <div className="container-editorial flex h-16 items-center justify-between">
-              <Link to="/" onClick={() => setOpen(false)} className="font-serif text-lg">
+              <Link href="/" onClick={() => setOpen(false)} className="font-serif text-lg">
                 Ashish.Katoch
               </Link>
               <button

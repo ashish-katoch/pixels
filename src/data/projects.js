@@ -14,6 +14,7 @@ export const projects = [
     stack: ["React.js", "JavaScript", "State Management", "SEO"],
     cover:
       "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80",
+    previewScroll: "/images/scroll/safeway-tall.jpg",
     accent: "#D71920",
     tagline:
       "Enhanced platform features and customised UI themes for one of the largest grocery chains in the United States.",
@@ -46,6 +47,7 @@ export const projects = [
     stack: ["React.js", "E-commerce", "Performance", "UX"],
     cover:
       "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1600&q=80",
+    previewScroll: "/images/scroll/kiehls-tall.jpg",
     accent: "#1A1A1A",
     tagline:
       "A premium skincare storefront tuned for clarity, conversion, and the kind of detail luxury customers notice.",
@@ -66,35 +68,36 @@ export const projects = [
     ],
   },
   {
-    slug: "the-beer-store",
+    slug: "polin-et-moi",
     index: "03",
-    title: "The Beer Store",
-    subtitle: "An e-commerce platform for Canada's largest beer retailer",
+    title: "Polín et moi",
+    subtitle: "Women's fashion e-commerce for a Madrid boutique brand",
     year: "2023",
-    duration: "5 months",
+    duration: "3 months",
     role: "Frontend Developer",
-    client: "The Beer Store",
-    liveUrl: "https://www.thebeerstore.ca/",
-    stack: ["React.js", "JavaScript", "E-commerce", "SEO"],
+    client: "Polín et moi",
+    liveUrl: "https://www.polinetmoi.com/es/",
+    stack: ["PrestaShop", "JavaScript", "CSS3", "E-commerce"],
     cover:
-      "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?auto=format&fit=crop&w=1600&q=80",
-    accent: "#C99B23",
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80",
+    previewScroll: "/images/scroll/polin-et-moi-tall.jpg",
+    accent: "#A56B54",
     tagline:
-      "Catalog, store locator, online ordering — at the scale of a national retailer with thousands of SKUs.",
+      "A PrestaShop storefront tuned to feel like an independent Madrid boutique, not a default template.",
     metrics: [
-      { value: "5mo", label: "Engagement" },
-      { value: "1000+", label: "SKUs surfaced" },
+      { value: "3mo", label: "Engagement" },
+      { value: "4", label: "Technologies used" },
       { value: "Live", label: "Site status" },
     ],
     challenge:
-      "Customers needed to navigate thousands of products, find a nearby store, and complete an online order — across desktop and mobile, without friction.",
+      "Polín et moi needed a PrestaShop storefront theme that felt as considered as an independent fashion boutique — across a full catalog, lookbook-style imagery, and a bridal line — rather than a generic template.",
     approach:
-      "Built reusable React components for the catalog, refined the store-locator interactions, and integrated cleaner search and filtering. Pushed SEO improvements throughout the funnel.",
+      "Built and refined frontend theme components within PrestaShop's templating system, tuned responsive layouts for the catalog and product pages, and worked within the platform's constraints to keep the storefront feeling editorial rather than off-the-shelf.",
     outcome:
-      "A simpler, faster path from discovery to order — and a frontend codebase the in-house team can extend with confidence.",
+      "A PrestaShop storefront with a distinct, boutique feel — consistent typography and imagery treatment across the catalog, lookbook, and product pages — live and serving customers today.",
     gallery: [
-      "https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1577905396516-7e54b2b3b6e6?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80",
     ],
   },
   {
@@ -110,6 +113,7 @@ export const projects = [
     stack: ["JavaScript", "CSS3", "Accessibility", "SEO"],
     cover:
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80",
+    previewScroll: "/images/scroll/csa-group-tall.jpg",
     accent: "#003B71",
     tagline:
       "A global standards organisation site rebuilt around clarity, structured content, and rigorous accessibility.",
@@ -142,6 +146,7 @@ export const projects = [
     stack: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
     cover:
       "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1600&q=80",
+    previewScroll: "/images/scroll/maria-marlowe-tall.jpg",
     accent: "#7C7B5E",
     tagline:
       "A calm, editorial site that supports a wellness brand built on trust, expertise, and beautifully written long-form content.",
@@ -174,6 +179,7 @@ export const projects = [
     stack: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
     cover:
       "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80",
+    previewScroll: "/images/scroll/jubilee-clio-tall.jpg",
     accent: "#8A6E3A",
     tagline:
       "Property listings, amenity tours, and inquiry flows — packaged in a confident, residential identity.",
