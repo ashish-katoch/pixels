@@ -3,23 +3,29 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useForm, ValidationError } from "@formspree/react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Reveal } from "../components/Reveal";
 import { ArrowUpRight } from "lucide-react";
 
 const EMAIL = "me@ashishpixels.com";
 const FORMSPREE_ID = "xvzjnakk";
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
+
+async function getRecaptchaToken() {
+  if (RECAPTCHA_SITE_KEY && typeof window !== "undefined" && window.grecaptcha?.execute) {
+    try {
+      return await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "submit" });
+    } catch {
+      return undefined;
+    }
+  }
+  return undefined;
+}
 
 function ContactForm() {
   const router = useRouter();
-  const { executeRecaptcha } = useGoogleReCaptcha();
-
-  const recaptchaData = executeRecaptcha
-    ? { "g-recaptcha-response": executeRecaptcha }
-    : {};
 
   const [state, handleSubmit] = useForm(FORMSPREE_ID, {
-    data: recaptchaData,
+    data: RECAPTCHA_SITE_KEY ? { "g-recaptcha-response": getRecaptchaToken } : {},
   });
 
   useEffect(() => {
