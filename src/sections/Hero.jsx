@@ -24,11 +24,16 @@ export function Hero() {
     >
       {/* Background photo + dark overlay */}
       <div className="absolute inset-0 z-0" aria-hidden data-testid="hero-bg">
-        <img
-          src="/images/hero-bg.jpg"
-          alt=""
-          className="h-full w-full object-cover max-[1199px]:object-[75%]"
-        />
+        <picture>
+          <source srcSet="/images/hero-bg.webp" type="image/webp" />
+          <img
+            src="/images/hero-bg.jpg"
+            alt=""
+            width={1672}
+            height={941}
+            className="h-full w-full object-cover max-[1199px]:object-[75%]"
+          />
+        </picture>
         {/* Light theme: fade starts immediately, fully clear by 50% */}
         <div className="absolute inset-0 block dark:hidden bg-gradient-to-r from-background/90 to-transparent to-50%" />
         {/* Dark theme: solid through 30%, then fades to a low residual tint (never fully clear) */}

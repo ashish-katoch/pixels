@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { ClientShell } from "@/components/ClientShell";
 import { JsonLd } from "@/components/JsonLd";
 import { CookieConsent } from "@/components/CookieConsent";
+import { RecaptchaProvider } from "@/components/RecaptchaProvider";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -181,8 +182,10 @@ export default function RootLayout({ children }) {
         <JsonLd data={WEBSITE_JSON_LD} />
         <JsonLd data={PROFILE_PAGE_JSON_LD} />
         <ThemeProvider>
-          <ClientShell>{children}</ClientShell>
-          <CookieConsent />
+          <RecaptchaProvider>
+            <ClientShell>{children}</ClientShell>
+            <CookieConsent />
+          </RecaptchaProvider>
         </ThemeProvider>
       </body>
     </html>
