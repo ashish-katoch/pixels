@@ -14,8 +14,12 @@ function ContactForm() {
   const router = useRouter();
   const { executeRecaptcha } = useGoogleReCaptcha();
 
+  const recaptchaData = executeRecaptcha
+    ? { "g-recaptcha-response": executeRecaptcha }
+    : {};
+
   const [state, handleSubmit] = useForm(FORMSPREE_ID, {
-    data: { "g-recaptcha-response": executeRecaptcha },
+    data: recaptchaData,
   });
 
   useEffect(() => {
