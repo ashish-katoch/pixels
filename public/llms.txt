@@ -1,0 +1,31 @@
+# Ashish Katoch — Frontend Engineer
+
+> Frontend Engineer with 8+ years building React.js and Next.js applications. Based in Mohali, India. Available for freelance and full-time roles.
+
+## About
+
+Ashish Katoch is a Frontend Engineer specializing in React.js, Next.js, and TypeScript. With 8+ years of experience, he has built responsive, scalable web applications for clients including Sobeys, Safeway, Kiehl's, and Polín et moi. He holds degrees from Lovely Professional University and Himachal Pradesh University.
+
+## Services
+
+- React.js / Next.js development
+- Frontend architecture and code review
+- Performance and accessibility audits
+- Design-to-code implementation
+
+## Portfolio
+
+- [Safeway](https://ashishpixels.com/work/safeway) — E-commerce frontend for Canada's grocery chain
+- [Kiehl's](https://ashishpixels.com/work/kiehls) — Luxury skincare e-commerce
+- [Polín et moi](https://ashishpixels.com/work/polin-et-moi) — French fashion brand storefront
+- [CSA Group](https://ashishpixels.com/work/csa-group) — Standards organization web platform
+- [Maria Marlowe](https://ashishpixels.com/work/maria-marlowe) — Health and wellness platform
+- [Jubilee Clio](https://ashishpixels.com/work/jubilee-clio) — Luxury brand website
+
+## Contact
+
+- Email: me@ashishpixels.com
+- Location: Mohali, Punjab, India
+- LinkedIn: https://www.linkedin.com/in/ashishkatoch/
+- GitHub: https://github.com/ashish-katoch
+- Behance: https://www.behance.net/ashish-katoch

@@ -130,7 +130,7 @@ function ProjectRow({ project, index }) {
             <motion.img
               ref={imgRef}
               src={project.previewScroll}
-              alt=""
+              alt={`${project.title} project preview`}
               loading="lazy"
               onLoad={handleImageLoad}
               className="w-full h-auto"
@@ -148,7 +148,7 @@ function ProjectRow({ project, index }) {
           ) : (
             <img
               src={project.cover}
-              alt=""
+              alt={`${project.title} project cover`}
               loading="lazy"
               className="h-full w-full object-contain"
             />

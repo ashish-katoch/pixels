@@ -29,9 +29,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const SITE_URL = "https://ashishpixels.com";
-const DEFAULT_TITLE = "Ashish Katoch — Frontend Engineer (React.js, Next.js, TypeScript)";
+const DEFAULT_TITLE = "Ashish Katoch — Frontend Engineer & Developer";
 const DEFAULT_DESCRIPTION =
-  "Ashish Katoch is a Frontend Engineer with 8+ years of experience building React.js and Next.js applications for Sobeys, Safeway, Kiehl's, and Polín et moi. Portfolio, case studies, and writing.";
+  "Frontend Engineer with 8+ years building React.js and Next.js apps for Sobeys, Safeway, Kiehl's, and Polín et moi. Portfolio and case studies.";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -58,7 +58,7 @@ export const metadata = {
     type: "website",
     title: DEFAULT_TITLE,
     description:
-      "Frontend Engineer with 8+ years of experience building React.js and Next.js applications for Sobeys, Safeway, Kiehl's, and Polín et moi.",
+      "Frontend Engineer with 8+ years building React.js and Next.js apps for Sobeys, Safeway, Kiehl's, and Polín et moi.",
     url: SITE_URL,
     siteName: "Ashish Katoch",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
@@ -68,7 +68,7 @@ export const metadata = {
     card: "summary_large_image",
     title: DEFAULT_TITLE,
     description:
-      "Frontend Engineer with 8+ years of experience building React.js and Next.js applications for Sobeys, Safeway, Kiehl's, and Polín et moi.",
+      "Frontend Engineer with 8+ years building React.js and Next.js apps for Sobeys, Safeway, Kiehl's, and Polín et moi.",
     images: ["/og-image.png"],
   },
   icons: {
