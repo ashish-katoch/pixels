@@ -1,18 +1,17 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { About } from "@/sections/About";
-import { Experience } from "@/sections/Experience";
+import { Contact } from "@/sections/Contact";
 
 export const metadata = {
-  title: "About",
+  title: "Contact",
   description:
-    "Ashish Katoch — Frontend Engineer with 8+ years of experience in React.js, Next.js, and TypeScript. Based in Mohali, India. Education, principles, and work history.",
-  alternates: { canonical: "/about" },
+    "Get in touch with Ashish Katoch for freelance React.js and Next.js projects. Based in Mohali, India — available for remote work worldwide.",
+  alternates: { canonical: "/contact" },
 };
 
-export default function AboutPage() {
+export default function ContactPage() {
   return (
-    <main className="pt-28 md:pt-36" data-testid="page-about">
+    <main className="pt-28 md:pt-36" data-testid="page-contact">
       <div className="container-editorial">
         <Link
           href="/"
@@ -22,8 +21,7 @@ export default function AboutPage() {
           Back to index
         </Link>
       </div>
-      <About />
-      <Experience />
+      <Contact />
     </main>
   );
 }

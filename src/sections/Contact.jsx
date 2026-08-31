@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Reveal } from "../components/Reveal";
 import { ArrowUpRight } from "lucide-react";
 
@@ -10,6 +11,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvzjnakk";
 export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle");
+  const router = useRouter();
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +25,7 @@ export function Contact() {
       if (!res.ok) throw new Error("Request failed");
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
+      router.push("/thank-you");
     } catch {
       setStatus("error");
     }
@@ -71,7 +74,22 @@ export function Contact() {
               </div>
               <div>
                 <p className="overline mb-2">Studio</p>
-                <p className="font-serif text-xl md:text-2xl">Chandigarh, India</p>
+                <p className="font-serif text-xl md:text-2xl">Mohali, India</p>
+              </div>
+              <div>
+                <p className="overline mb-2">Availability</p>
+                <p className="text-base text-foreground/75">
+                  Open to freelance and full-time · Remote worldwide · IST timezone
+                </p>
+              </div>
+              <div>
+                <p className="overline mb-2">Services</p>
+                <ul className="text-sm text-foreground/75 space-y-1">
+                  <li>React.js / Next.js development</li>
+                  <li>Frontend architecture & code review</li>
+                  <li>Performance & accessibility audits</li>
+                  <li>Design-to-code implementation</li>
+                </ul>
               </div>
             </div>
           </Reveal>
@@ -82,6 +100,14 @@ export function Contact() {
               className="space-y-8"
               data-testid="contact-form"
             >
+              <input
+                type="text"
+                name="_gotcha"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ display: "none" }}
+              />
               <Field
                 id="contact-name"
                 name="name"

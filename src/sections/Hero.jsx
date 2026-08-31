@@ -47,7 +47,7 @@ export function Hero() {
             >
               <span className="inline-flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Available · Q1 2026
+                Available · Q3 2026
               </span>
             </motion.div>
             <motion.div

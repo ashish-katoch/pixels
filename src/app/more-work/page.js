@@ -4,9 +4,9 @@ import { moreWork } from "@/data/moreWork";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata = {
-  title: "More Work",
+  title: "Client Projects & Portfolio",
   description:
-    "Additional client projects across React/Next.js, WordPress, Shopify, Magento, and more — listed without the full case-study treatment.",
+    "30+ client projects by Ashish Katoch across React/Next.js, WordPress, Shopify, Magento, and more — from e-commerce to editorial.",
   alternates: { canonical: "/more-work" },
 };
 

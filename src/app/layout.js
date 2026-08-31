@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ClientShell } from "@/components/ClientShell";
 import { JsonLd } from "@/components/JsonLd";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -82,16 +83,33 @@ export const metadata = {
 const PERSON_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${SITE_URL}/#person`,
   name: "Ashish Katoch",
+  givenName: "Ashish",
+  familyName: "Katoch",
   url: SITE_URL,
+  image: `${SITE_URL}/images/hero-bg.jpg`,
   jobTitle: "Frontend Engineer",
+  description:
+    "Frontend Engineer with 8+ years of experience building React.js and Next.js applications. Based in Mohali, India. Available for freelance and full-time roles.",
   email: "mailto:me@ashishpixels.com",
+
   address: {
     "@type": "PostalAddress",
     addressLocality: "Mohali",
     addressRegion: "Punjab",
     addressCountry: "IN",
   },
+  alumniOf: [
+    {
+      "@type": "CollegeOrUniversity",
+      name: "Lovely Professional University",
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      name: "Himachal Pradesh University",
+    },
+  ],
   knowsAbout: [
     "React.js",
     "Next.js",
@@ -99,6 +117,9 @@ const PERSON_JSON_LD = {
     "JavaScript",
     "Frontend Development",
     "Web Accessibility",
+    "Tailwind CSS",
+    "E-commerce Development",
+    "UI/UX Design",
   ],
   sameAs: [
     "https://www.linkedin.com/in/ashishkatoch/",
@@ -124,10 +145,25 @@ const ORGANIZATION_JSON_LD = {
 const WEBSITE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
   name: "Ashish Katoch — Portfolio",
   url: SITE_URL,
   inLanguage: "en",
-  author: { "@type": "Person", name: "Ashish Katoch" },
+  author: { "@id": `${SITE_URL}/#person` },
+  publisher: { "@id": `${SITE_URL}/#person` },
+  description: DEFAULT_DESCRIPTION,
+};
+
+const PROFILE_PAGE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": `${SITE_URL}/#profilepage`,
+  url: SITE_URL,
+  name: "Ashish Katoch — Frontend Engineer Portfolio",
+  mainEntity: { "@id": `${SITE_URL}/#person` },
+  dateCreated: "2025-12-01",
+  dateModified: "2026-08-30",
+  inLanguage: "en",
 };
 
 export default function RootLayout({ children }) {
@@ -138,12 +174,15 @@ export default function RootLayout({ children }) {
       data-scroll-behavior="smooth"
       className={`${playfairDisplay.variable} ${outfit.variable} ${jetbrainsMono.variable}`}
     >
+      <head />
       <body className="antialiased">
         <JsonLd data={PERSON_JSON_LD} />
         <JsonLd data={ORGANIZATION_JSON_LD} />
         <JsonLd data={WEBSITE_JSON_LD} />
+        <JsonLd data={PROFILE_PAGE_JSON_LD} />
         <ThemeProvider>
           <ClientShell>{children}</ClientShell>
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>

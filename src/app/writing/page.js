@@ -3,9 +3,9 @@ import { posts } from "@/data/posts";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata = {
-  title: "Writing",
+  title: "Writing on Frontend Craft",
   description:
-    "Occasional essays on frontend craft, design systems, and the increasingly editorial weight of building for the web.",
+    "Essays by Ashish Katoch on frontend engineering, React.js, design systems, accessibility, and the editorial side of building for the web.",
   alternates: { canonical: "/writing" },
 };
 

@@ -14,7 +14,7 @@ const NAV = [
   { to: "/#expertise", label: "Expertise" },
   { to: "/about", label: "About" },
   { to: "/writing", label: "Writing" },
-  { to: "/#contact", label: "Contact" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export function Nav() {
@@ -137,25 +137,40 @@ export function Nav() {
               </button>
             </div>
             <nav className="container-editorial mt-16 flex flex-col gap-7 font-serif text-4xl">
-              {NAV.map((item, i) => (
-                <motion.a
-                  key={item.label}
-                  href={item.to.startsWith("/#") ? item.to.replace("/", "") : item.to}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.06 * i, duration: 0.5 }}
-                  onClick={(e) => {
-                    setOpen(false);
-                    if (item.to.startsWith("/#")) {
+              {NAV.map((item, i) =>
+                item.to.startsWith("/#") ? (
+                  <motion.a
+                    key={item.label}
+                    href={item.to.replace("/", "")}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.06 * i, duration: 0.5 }}
+                    onClick={(e) => {
+                      setOpen(false);
                       e.preventDefault();
                       setTimeout(() => goToSection(item.to.slice(2)), 280);
-                    }
-                  }}
-                  data-testid={`mobile-nav-link-${item.label.toLowerCase()}`}
-                >
-                  {item.label}
-                </motion.a>
-              ))}
+                    }}
+                    data-testid={`mobile-nav-link-${item.label.toLowerCase()}`}
+                  >
+                    {item.label}
+                  </motion.a>
+                ) : (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.06 * i, duration: 0.5 }}
+                  >
+                    <Link
+                      href={item.to}
+                      onClick={() => setOpen(false)}
+                      data-testid={`mobile-nav-link-${item.label.toLowerCase()}`}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                )
+              )}
               <motion.a
                 href={RESUME_URL}
                 target="_blank"
